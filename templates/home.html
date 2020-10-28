@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#list_table').DataTable();
+        } );
+    </script>
+</head>
+<body>
+
+<h3>{{title}}</h3>
+
+<table id="list_table" class="display" width="auto">
+{% for issue in page_obj %}
+    <tbody>
+    <tr>
+        <td>Number: <a href="/issue/{{ issue.issue_id }}">{{ issue.issue_id }}</a></td>
+        <td>Title: <a href="/issue/{{ issue.issue_id }}">{{ issue.title }}</a></td>
+        <td>State: <a href="/issue/{{ issue.issue_id }}">{{ issue.state }}</a></td>
+    </tr>
+    </tbody>
+{% endfor %}
+</table>
+
+<br>
+<br>
+
+<div class="pagination" align = "center">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+</body>
+</html>

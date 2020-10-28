@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Details</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#issue_details').DataTable();
+        } );
+    </script>
+</head>
+<body>
+
+<a href="javascript:history.back()">Back to List of Issues</a>
+<h3>{{title}}</h3>
+
+{% if issue %}
+<p>
+<table id="issue_details" class="display">
+    <tbody>
+    <tr>
+        <td>Issue#</td>
+        <td>{{issue_data.number}}</td>
+    </tr>
+    <tr>
+        <td>Title </td>
+        <td>{{issue_data.title}}</td>
+    </tr>
+    <tr>
+        <td>State </td>
+        <td>{{issue_data.state}}</td>
+    </tr>
+    <tr>
+        <td>Owner </td>
+        <td>{{issue_data.user.login}}</td>
+    </tr>
+    <tr>
+        <td>Cretated at </td>
+        <td>{{issue_data.created_at}}</td>
+    </tr>
+    <tr>
+        <td>Updated at </td>
+        <td>{{issue_data.updated_at}}</td>
+    </tr>
+    <tr>
+        <td>Author_association </td>
+        <td>{{issue_data.author_association}}</td>
+    </tr>
+    <tr>
+        <td>Body </td>
+        <td>{{issue_data.body}}</td>
+    </tr>
+
+    {% comment %}
+    {% for issuedk, issuedv in issue_data.items %}
+    <tr>
+        <td>{{issuedk}}</td>
+        <td>{{issuedv}}</td>
+    </tr>
+    {% endfor %}
+    {% endcomment %}
+
+    </tbody>
+</table>
+</p>
+{% endif %}
+
+</body>
+</html>
