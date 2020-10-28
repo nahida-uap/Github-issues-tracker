@@ -4,12 +4,15 @@ Author: Nahida Sultana Chowdhury
 
 
 create virtual environemnt
+
 $ python -m venv env
 
 to activate the virtual environment
+
 $ env\Scripts\activate
 
 to deactivate
+
 $ deactivate
 
 
