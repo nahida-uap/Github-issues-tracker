@@ -16,6 +16,10 @@ to deactivate
 $ deactivate
 
 
+In line 23 of Github-issues-tracker/issue_tracker/settings.py file please provide your SECRET_KEY
+
+
+
 Installation
 -------------
 Copy the folder
@@ -41,3 +45,5 @@ $python manage.py runserver
 The development server will be start at http://127.0.0.1:8000/
 
 To quit Clt+c
+
+
