@@ -22,7 +22,7 @@ Copy the folder
 
 Change the working directory to "Github-issues_tracker"
 
-$ cd issue_tracker
+$ cd Github-issues_tracker
 
 Install the requirements
 
