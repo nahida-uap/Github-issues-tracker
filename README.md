@@ -33,7 +33,7 @@ $ pip freeze
 
 To run using command prompt
 
-python manage.py runserver
+$python manage.py runserver
 
 The development server will be start at http://127.0.0.1:8000/
 
