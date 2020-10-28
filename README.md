@@ -41,5 +41,3 @@ $python manage.py runserver
 The development server will be start at http://127.0.0.1:8000/
 
 To quit Clt+c
-
-Database located at: issue_tracker/db.sqlite3
