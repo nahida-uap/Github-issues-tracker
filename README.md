@@ -29,6 +29,8 @@ To check all the requirements successfully installed or not
 
 $ pip freeze
 
+
+
 To run using command prompt
 
 python manage.py runserver
